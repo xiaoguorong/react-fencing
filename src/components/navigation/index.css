@@ -1,0 +1,46 @@
+.nav{
+    width:100vw;
+    height:.72rem;
+    background:rgba(24,23,58,1);
+    box-shadow:0px 3px 6px rgba(0,0,0,0.16);
+    opacity:0.95;
+}
+.inner{
+    width:12rem;
+    margin:auto;
+    display:flex;
+}
+.logo{
+    padding-top:.1rem;
+}
+.logo img{
+    width:1.86rem;
+    height:.5rem;
+}
+.title{
+    margin-left:.18rem;
+    font-size:.16rem;
+    font-family:Microsoft YaHei;
+    font-weight:400;
+    line-height:.18rem;
+    height:.18rem;
+    color:rgba(255,255,255,1);
+    opacity:1;
+    border-left:1px solid #fff;
+    padding-left:.1rem;
+    margin-top:.28rem;
+}
+.tab{
+    flex:1;
+}
+.tab>div{
+    margin-left:.4rem;
+    float:right;
+    font-size:.14rem;
+    font-family:Microsoft YaHei;
+    font-weight:400;
+    line-height:.72rem;
+    color:rgba(255,255,255,1);
+    opacity:1;
+
+}
