@@ -17,7 +17,7 @@
     width:1.86rem;
     height:.5rem;
 }
-.title{
+.nav .title{
     margin-left:.18rem;
     font-size:.16rem;
     font-family:Microsoft YaHei;
@@ -30,10 +30,10 @@
     padding-left:.1rem;
     margin-top:.28rem;
 }
-.tab{
+.nav .tab{
     flex:1;
 }
-.tab>div{
+.nav .tab>div{
     margin-left:.4rem;
     float:right;
     font-size:.14rem;

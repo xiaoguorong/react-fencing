@@ -1,0 +1,32 @@
+.layout{
+    width:100%;
+}
+.layout>div:first-of-type{
+    overflow:hidden;
+}
+.layout>div:first-of-type span:first-of-type{
+    float:left;
+    font-size:.26rem;
+    font-family:Microsoft YaHei;
+    font-weight:400;
+    line-height:.35rem;
+    color:rgba(51,51,51,1);
+    opacity:1;
+}
+.layout>div:first-of-type img{
+    margin-left:.09rem;
+    width:.06rem;
+    height:.11rem;
+    margin-top:.2rem;
+    float:right;
+}
+.layout>div:first-of-type span:nth-of-type(2){
+    float:right;
+    font-size:.13rem;
+    font-family:Microsoft YaHei;
+    font-weight:400;
+    line-height:.19rem;
+    color:rgba(51,51,51,1);
+    opacity:1;
+    margin-top:.16rem;
+}
