@@ -1,6 +1,6 @@
 import React from 'react';
+import Layout from '../../components/index-layout'
 import Navigation from '../../components/navigation'
-import Layout from '../../components/layout'
 import './index.css'
 import bg1 from './../../images/1.png'
 import bg2 from './../../images/2.png'
@@ -12,13 +12,18 @@ import arrowL from './../../images/arrow_left.png'
 import arrowR from './../../images/arrow_right.png'
 import hot from './../../images/hot.png'
 import arrow from './../../images/arrow_more_left.png'
+import arrowRB from './../../images/arrow_right_blackbg.png'
+import arrowLB from './../../images/arrow_left_blackbg.png'
+
 export default class index extends React.Component {
     state = {
         bannerBgList:[],
         bannerClickIndex: 0,//0 4张靠左 1 4张靠右
         bannerHoverIndex: 1,
+        equipmentIndex:0,
         starList:[],
         starPage:1,
+        peoplePage:1,
         videoIndex:0
     }
     componentWillMount(){
@@ -47,13 +52,30 @@ export default class index extends React.Component {
         var page = this.state.starPage;
         this.setState({starPage:--page})
     }
+    peoplePageAdd=()=>{
+        if(this.state.peoplePage === 2) return;
+        var page = this.state.peoplePage;
+        this.setState({peoplePage:++page})
+    }
+    peoplePageRemove=()=>{
+        if(this.state.peoplePage === 1) return;
+        var page = this.state.peoplePage;
+        this.setState({peoplePage:--page})
+    }
     changeVideoIndex=(index)=>{
         this.setState({videoIndex:index})
+    }
+    toggleVideoDes=()=>{
+        var cover = document.querySelector(".list .cover")
+        cover.classList.toggle("cover_close")
+    }
+    toggleEquipmentHover=(index)=>{
+        this.setState({equipmentIndex:index})
     }
     render(){
         return (
             <main>
-                <Navigation></Navigation>
+                <Navigation tab="index"></Navigation>
                 <div className="banner_container">
                     <div className="banner">
                         {this.state.bannerClickIndex === 1 ? (  
@@ -194,7 +216,23 @@ export default class index extends React.Component {
                         </Layout>
                     </div>
                     <div className="interview">
-                        <Layout title="精彩专访">
+                        <div className="layout">
+                            <div>
+                                <span>击剑明星</span>
+                                <div>
+                                    {this.state.peoplePage < 2 &&
+                                        <img src={arrow} alt="" onClick={this.peoplePageAdd.bind(this)} className="add"></img>   
+                                    } 
+                                </div>
+                                <span>{this.state.peoplePage}/<b style={{fontWeight:400,color:this.state.peoplePage < 2 ? '#999999' : '#333333'}}>2</b></span>
+                                <div>
+                                    {this.state.peoplePage > 1 &&
+                                        <img src={arrow} alt="" onClick={this.peoplePageRemove.bind(this)} className="remove"></img> 
+                                    } 
+                                </div>  
+                            </div>
+                        </div>
+                        {this.state.peoplePage === 1 &&
                             <div className="people">
                                 <div>
                                     <div className="name">
@@ -203,7 +241,7 @@ export default class index extends React.Component {
                                     <div className="introduce">
                                         <p>中国男子佩剑队运动员</p>
                                         <p>15岁之前是田径队员，15岁时由于身高过高被借调到篮球队参加比赛，在南通市比赛时，被击剑教练黄保华看中。1997年夏天，仲满正式学习击剑，教练黄保华。2005年，进入国家队。</p>
-                                        <p>查看更多</p>
+                                        <p>查看详情</p>
                                     </div>
                                 </div>
                                 <div>
@@ -213,11 +251,35 @@ export default class index extends React.Component {
                                     <div className="introduce">
                                         <p>中国男子佩剑队运动员</p>
                                         <p>15岁之前是田径队员，15岁时由于身高过高被借调到篮球队参加比赛，在南通市比赛时，被击剑教练黄保华看中。1997年夏天，仲满正式学习击剑，教练黄保华。2005年，进入国家队。</p>
-                                        <p>查看更多</p>
+                                        <p>查看详情</p>
                                     </div>
                                 </div>
                             </div>
-                        </Layout>
+                        } 
+                        {this.state.peoplePage === 2 &&
+                            <div className="people">
+                                <div>
+                                    <div className="name">
+                                        <b>董丽</b> 国家队击剑运动员
+                                    </div>
+                                    <div className="introduce">
+                                        <p>中国男子佩剑队运动员</p>
+                                        <p>15岁之前是田径队员，15岁时由g，在南通市比赛时，被击剑教练黄保华看中。1997年夏天，仲满正式学习击剑，教练黄保华。2005年，进入国家队。</p>
+                                        <p>查看详情</p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div className="name">
+                                        <b>董丽</b> 国家队击剑运动员
+                                    </div>
+                                    <div className="introduce">
+                                        <p>中国男子佩剑队运动员</p>
+                                        <p>15岁之前是田径队员，15岁时由于身高过高被借调到篮球队参加比赛，在南通市比赛时，被击剑教练黄保华看中。1997年夏天，仲满正式学习击剑，教练黄保华。2005年，进入国家队。</p>
+                                        <p>查看详情</p>
+                                    </div>
+                                </div>
+                            </div>
+                        } 
                     </div> 
                 </div>                       
                 <div className="star">
@@ -259,9 +321,206 @@ export default class index extends React.Component {
                                 <img src={playOS} alt=""></img>
                                 <span>播放量：200</span>
                             </div>
+                            <div className="arrow_r" onClick={this.toggleVideoDes}>
+                                <img src={arrowRB} alt=""></img>
+                            </div>
+                            <div className="cover">
+                                <div className="arrow" onClick={this.toggleVideoDes}>
+                                    <img src={arrowLB} alt=""></img>
+                                </div>
+                                <p>2019-2020赛季全国击剑冠军赛（第一站）</p>
+                                <p>中国击剑俱乐部联赛激战横店 领略击剑魅力</p>
+                                <p>决战一触即发 中国击剑俱乐部联赛横店站揭幕</p>
+                                <p>中国击剑俱乐部联赛长春站第二日</p>
+                                <p>千名剑客共团圆 中国击剑俱乐部联赛长春站揭幕</p>
+                            </div>
                         </div>
-                        <div className="leftInner"></div>
+                        <ul className="rightInner">
+                            <li style={{backgroundImage:'url('+bg2+')'}}>
+                                <div className="play">
+                                    <img src={playOS} alt=""></img>
+                                    <span>中国击剑俱乐部联</span>
+                                </div>
+                            </li>
+                            <li style={{backgroundImage:'url('+bg2+')'}}>
+                                <div className="play">
+                                    <img src={playOS} alt=""></img>
+                                    <span>中国击剑俱乐部联</span>
+                                </div>
+                            </li>
+                            <li style={{backgroundImage:'url('+bg2+')'}}>
+                                <div className="play">
+                                    <img src={playOS} alt=""></img>
+                                    <span>中国击剑俱乐部联</span>
+                                </div>
+                            </li>
+                            <li style={{backgroundImage:'url('+bg2+')'}}>
+                                <div className="play">
+                                    <img src={playOS} alt=""></img>
+                                    <span>中国击剑俱乐部联</span>
+                                </div>
+                            </li>
+                            <li style={{backgroundImage:'url('+bg2+')'}}>
+                                <div className="play">
+                                    <img src={playOS} alt=""></img>
+                                    <span>中国击剑俱乐部联</span>
+                                </div>
+                            </li>
+                            <li style={{backgroundImage:'url('+bg2+')'}}>
+                                <div className="play">
+                                    <img src={playOS} alt=""></img>
+                                    <span>中国击剑俱乐部联</span>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
+                </div>
+                <div className="display">
+                    <Layout title="机构风采">
+                        <ul>
+                            <li>
+                                <img src={bg1} alt=""></img>
+                                <p>中国击剑俱乐部-风采展示01</p>
+                            </li>
+                            <li>
+                                <img src={bg1} alt=""></img>
+                                <p>中国击剑俱乐部-风采展示02</p>
+                            </li>
+                            <li>
+                                <img src={bg1} alt=""></img>
+                                <p>中国击剑俱乐部-风采展示03</p>
+                            </li>
+                            <li>
+                                <img src={bg1} alt=""></img>
+                                <p>中国击剑俱乐部-风采展示04</p>
+                            </li>
+                        </ul>
+                    </Layout>
+                </div>
+                <div className="knowledge_and_org_video">
+                    <div className="knowledge">
+                        <Layout title="击剑知识">
+                            <div className="inner">
+                                <p>击剑术语</p>
+                                <p>观赛礼仪</p>
+                                <p>击剑术语介绍-中英版</p>
+                                <p>击剑项目比赛规则</p>
+                                <p>查看更多</p>
+                            </div>
+                        </Layout>
+                    </div>
+                    <div className="org_video">
+                        <Layout title="机构视频">
+                            <ul className="inner">
+                               <li style={{backgroundImage:'url('+bg2+')'}}>
+                                    <div className="cover">
+                                        <span>国家队击剑运动员</span>
+                                        <div className="play">
+                                            <img src={playOS} alt=""></img>
+                                            <span>播放量：100</span>
+                                        </div>
+                                    </div>
+                               </li>
+                               <li style={{backgroundImage:'url('+bg2+')'}}>
+                                    <div className="cover">
+                                        <span>国家队击剑运动员</span>
+                                        <div className="play">
+                                            <img src={playOS} alt=""></img>
+                                            <span>播放量：100</span>
+                                        </div>
+                                    </div>
+                               </li>
+                               <li style={{backgroundImage:'url('+bg2+')'}}>
+                                    <div className="cover">
+                                        <span>国家队击剑运动员</span>
+                                        <div className="play">
+                                            <img src={playOS} alt=""></img>
+                                            <span>播放量：100</span>
+                                        </div>
+                                    </div>
+                               </li>
+                            </ul>
+                        </Layout>
+                    </div>
+                </div>
+                <div className="equipment">
+                    <Layout title="击剑器材">
+                        <div className="container">
+                            <div className="leftInner">
+                                {this.state.equipmentIndex === 0 &&
+                                <div>
+                                    <div className="pic">
+                                        <img src={bg2} alt=""></img>
+                                        <p>击剑面罩</p>
+                                    </div>
+                                    <div className="pic">
+                                        <img src={bg2} alt=""></img>
+                                        <p>击剑面罩</p>
+                                    </div>
+                                </div>
+                                }
+                                {this.state.equipmentIndex === 1 &&
+                                <div>
+                                    <div className="pic">
+                                        <img src={bg2} alt=""></img>
+                                        <p>击剑面罩1</p>
+                                    </div>
+                                    <div className="pic">
+                                        <img src={bg2} alt=""></img>
+                                        <p>击剑面罩1</p>
+                                    </div>
+                                </div>
+                                }
+                                {this.state.equipmentIndex === 2 &&
+                                <div>
+                                    <div className="pic">
+                                        <img src={bg2} alt=""></img>
+                                        <p>击剑面罩2</p>
+                                    </div>
+                                    <div className="pic">
+                                        <img src={bg2} alt=""></img>
+                                        <p>击剑面罩2</p>
+                                    </div>
+                                </div>
+                                }
+                                <div className="spot">
+                                    <span style={{background:this.state.equipmentIndex === 0 ? '#FF5D38' : '#DEDEDE'}}
+                                    onMouseEnter={this.toggleEquipmentHover.bind(this,0)} 
+                                    onMouseLeave={this.toggleEquipmentHover.bind(this,0)}></span>
+                                    <span style={{background:this.state.equipmentIndex === 1 ? '#FF5D38' : '#DEDEDE'}}
+                                    onMouseEnter={this.toggleEquipmentHover.bind(this,1)} 
+                                    onMouseLeave={this.toggleEquipmentHover.bind(this,1)}></span>
+                                    <span style={{background:this.state.equipmentIndex === 2 ? '#FF5D38' : '#DEDEDE'}}
+                                    onMouseEnter={this.toggleEquipmentHover.bind(this,2)} 
+                                    onMouseLeave={this.toggleEquipmentHover.bind(this,2)}></span>
+                                </div>
+                            </div>
+                            <div className="rightInner">
+                                <div>
+                                    <p>器材知识</p>
+                                    <p>击剑术语</p>
+                                    <p>观赛礼仪</p>
+                                    <p>击剑术语介绍-中英版</p>
+                                    <p>击剑项目比赛规则</p>
+                                    <p>击剑项目比赛规则</p>
+                                    <p>击剑项目比赛规则</p>
+                                    <p>击剑项目比赛规则</p>
+                                    <p>查看更多</p>
+                                </div>
+                                <div>
+                                    <p>器材测评</p>
+                                    <p>击剑术语</p>
+                                    <p>观赛礼仪</p>
+                                    <p>击剑术语介绍-中英版</p>
+                                    <p>击剑项目比赛规则</p>
+                                    <p>击剑项目比赛规则</p>
+                                    <p>击剑项目比赛规则</p>
+                                    <p>击剑项目比赛规则</p>
+                                    <p>查看更多</p>
+                                </div>
+                            </div>
+                        </div>
+                    </Layout>
                 </div>
             </main>
         )

@@ -5,7 +5,7 @@
     box-shadow:0px 3px 6px rgba(0,0,0,0.16);
     opacity:0.95;
 }
-.inner{
+.nav .inner{
     width:12rem;
     margin:auto;
     display:flex;
@@ -33,13 +33,13 @@
 .nav .tab{
     flex:1;
 }
-.nav .tab>div{
+.nav .tab div{
     margin-left:.4rem;
     float:right;
     font-size:.14rem;
     font-family:Microsoft YaHei;
     font-weight:400;
-    line-height:.72rem;
+    line-height:.68rem;
     color:rgba(255,255,255,1);
     opacity:1;
 
