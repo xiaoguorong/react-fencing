@@ -8,6 +8,8 @@ import './style/common.css';
 import Index from './pages/index/index'
 import Info from './pages/info/index'
 import InfoDetail from './pages/info/detail'
+import Match from './pages/match/index'
+import MatchStar from './pages/match/star'
 import Layout from './pages/layout/index'
 ReactDOM.render(
     <HashRouter>
@@ -17,7 +19,8 @@ ReactDOM.render(
                     <Route path="/index" component={Index}/>
                     <Route path="/info" component={Info} exact/>
                     <Route path="/info/:id" component={InfoDetail}/>
-                    <Route path="/user" component={Info}/>
+                    <Route path="/match" component={Match} exact/>
+                    <Route path="/match/:id" component={MatchStar}/>
                     <Redirect to="/index" />
                 </Switch>
             </Layout>

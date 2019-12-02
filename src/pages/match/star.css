@@ -1,0 +1,181 @@
+.detail_title{
+    width:12rem;
+    margin:auto;
+    border-bottom:1px solid #EDEDED;
+    font-size:.13rem;
+    font-family:Microsoft YaHei;
+    font-weight:400;
+    line-height:.57rem;
+    color:rgba(51,51,51,1);
+}
+.star_detail{
+    width:12rem;
+    margin:auto;
+}
+.star_info{
+    display:flex;
+}
+.star_info .avatar{
+    margin-top:.44rem;
+    overflow: hidden;
+}
+.star_info .avatar img{
+    width:1.38rem;
+    height:1.38rem;
+    border-radius: 50%;
+    margin-right:.2rem;
+}
+.star_info .info{
+    flex:1;
+}
+.star_info .info p:nth-of-type(1){
+    font-size:.26rem;
+    margin-top:.41rem;
+    font-family:Microsoft YaHei;
+    font-weight:400;
+    line-height:.35rem;
+    color:rgba(51,51,51,1);
+}
+.star_info .info p:nth-of-type(2),.star_info .info p:nth-of-type(3),.star_info .info p:nth-of-type(4){
+    font-size:.13rem;
+    font-family:Microsoft YaHei;
+    font-weight:400;
+    line-height:.17rem;
+    margin-top:.2rem;
+    color:rgba(0,0,0,0.85);
+}
+.star_info .info p:nth-of-type(3){
+    margin-top:.1rem;
+}
+.recent_games>p{
+    font-size:.18rem;
+    font-family:Microsoft YaHei;
+    font-weight:400;
+    line-height:.24rem;
+    margin-top:.5rem;
+    color:rgba(51,51,51,1);
+}
+.recent_games .event{
+    height:1.3rem;
+    width:12rem;
+    margin:auto;
+    margin-top:.2rem;
+    background:#F8F8F8;
+    border-radius:.04rem;
+    box-sizing:border-box;
+    padding:.3rem .27rem;
+    position: relative;
+}
+.recent_games .event ul{
+    display:flex;
+}
+.recent_games .event li{
+    border-right:1px solid #E3E3E3;
+    flex:1;
+}
+.recent_games .event li:nth-of-type(5n){
+    border-right:none;
+}
+.recent_games .event p:nth-of-type(1){
+    font-size:.14rem;
+    font-family:Microsoft YaHei;
+    font-weight:400;
+    line-height:.19rem;
+    text-align: center;
+    color:rgba(51,51,51,1);
+}
+.recent_games .event p:nth-of-type(2){
+    font-size:.14rem;
+    font-family:Microsoft YaHei;
+    font-weight:400;
+    line-height:.19rem;
+    margin-top:.1rem;
+    text-align: center;
+    color:rgba(255,93,56,1);
+}
+.recent_games .event p:nth-of-type(3){
+    font-size:.14rem;
+    margin-top:.03rem;
+    font-family:Microsoft YaHei;
+    font-weight:bold;
+    line-height:.19rem;
+    text-align: center;
+    color:rgba(51,51,51,1);
+}
+.recent_games .event img:nth-of-type(1){
+    position: absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    width:.46rem;
+    height:.46rem;
+    margin:auto;
+}
+.recent_games .event img:nth-of-type(2){
+    position: absolute;
+    top:0;
+    width:.46rem;
+    height:.46rem;
+    bottom:0;
+    right:0;
+    margin:auto;
+}
+.heroic_moment{
+    margin-top:.37rem;
+}
+.heroic_moment .list{
+    overflow: hidden;
+}
+.heroic_moment .list li{
+    width:2.85rem;
+    height:2.5rem;
+    margin-right:.2rem;
+    float: left;
+    border-radius: .04rem;
+    overflow: hidden;
+    margin-top:.2rem;
+    position: relative;
+}
+.heroic_moment .list li img{
+    width:100%;
+    height:2.08rem;
+}
+.heroic_moment .list li p{
+    font-size:.15rem;
+    font-family:Microsoft YaHei;
+    font-weight:400;
+    line-height:.42rem;
+    padding-left:.1rem;
+    background: #F8F8F8;
+    color:rgba(51,51,51,1);
+}
+.heroic_moment .list li:nth-of-type(4n){
+    margin-right:0
+}
+.heroic_moment .list .play{
+    width:.99rem;
+    height:.24rem;
+    background:rgba(42,38,67,1);
+    opacity:1;
+    bottom:.52rem;
+    position: absolute;
+    border-radius:.4rem;
+    margin-right:.1rem;
+    margin-left:.11rem;
+    overflow:hidden;
+}
+.heroic_moment .list .play img{
+    width:.12rem;
+    height:.12rem;
+    margin:.06rem;
+    float:left;
+}
+.heroic_moment .list .play span{
+    font-size:.12rem;
+    font-family:Microsoft YaHei;
+    font-weight:400;
+    float:left;
+    line-height:.24rem;
+    color:rgba(255,255,255,1);
+    opacity:1;
+}
