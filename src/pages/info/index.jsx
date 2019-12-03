@@ -1,7 +1,6 @@
 import React,{ Component } from 'react';
 import {Link} from 'react-router-dom'
 import Navigation from '../../components/navigation'
-import Layout from '../../components/index-layout'
 import bg1 from './../../images/1.png'
 import './index.css'
 export default class info extends Component {
@@ -16,51 +15,50 @@ export default class info extends Component {
             <main>
                 <Navigation tab="info"></Navigation>
                 <div className="headlines"> 
-                    <Layout title="今日头条">
-                        <div className="container">
-                            <div className="leftInner">
-                                <img src={bg1} alt=""></img>
-                                <div className="des">
-                                    <p>女重世界杯巴塞罗那站个人赛 朱明叶夺金</p>
-                                    <p>据国际剑联11日消息，中国选手朱明叶在巴塞罗那当地时间9日举行的重剑世界杯分站赛中连克强敌，夺得金牌。中国队将于11日向团体奖牌发起冲击。</p>
-                                </div>
+                    <p>今日头条</p>
+                    <div className="container">
+                        <div className="leftInner">
+                            <img src={bg1} alt=""></img>
+                            <div className="des">
+                                <p>女重世界杯巴塞罗那站个人赛 朱明叶夺金</p>
+                                <p>据国际剑联11日消息，中国选手朱明叶在巴塞罗那当地时间9日举行的重剑世界杯分站赛中连克强敌，夺得金牌。中国队将于11日向团体奖牌发起冲击。</p>
                             </div>
-                            <ul className="rightInner">
-                                <li>
-                                    <img src={bg1} alt=""></img>
-                                    <div>中国击剑俱乐部联赛激战横店 领力</div>
-                                </li>
-                                <li>
-                                    <img src={bg1} alt=""></img>
-                                    <div>中国击剑俱乐部联赛激战横店 领力</div>
-                                </li>
-                                <li>
-                                    <img src={bg1} alt=""></img>
-                                    <div>中国击剑俱乐部联赛激战横店 领力</div>
-                                </li>
-                                <li>
-                                    <img src={bg1} alt=""></img>
-                                    <div>中国击剑俱乐部联赛激战横店 领力</div>
-                                </li>
-                                <li>
-                                    <img src={bg1} alt=""></img>
-                                    <div>中国击剑俱乐部联赛激战横店 领力</div>
-                                </li>
-                                <li>
-                                    <img src={bg1} alt=""></img>
-                                    <div>中国击剑俱乐部联赛激战横店 领力</div>
-                                </li>
-                                <li>
-                                    <img src={bg1} alt=""></img>
-                                    <div>中国击剑俱乐部联赛激战横店 领力</div>
-                                </li>
-                                <li>
-                                    <img src={bg1} alt=""></img>
-                                    <div>中国击剑俱乐部联赛激战横店 领力</div>
-                                </li>
-                            </ul>
                         </div>
-                    </Layout>
+                        <ul className="rightInner">
+                            <li>
+                                <img src={bg1} alt=""></img>
+                                <div>中国击剑俱乐部联赛激战横店 领力</div>
+                            </li>
+                            <li>
+                                <img src={bg1} alt=""></img>
+                                <div>中国击剑俱乐部联赛激战横店 领力</div>
+                            </li>
+                            <li>
+                                <img src={bg1} alt=""></img>
+                                <div>中国击剑俱乐部联赛激战横店 领力</div>
+                            </li>
+                            <li>
+                                <img src={bg1} alt=""></img>
+                                <div>中国击剑俱乐部联赛激战横店 领力</div>
+                            </li>
+                            <li>
+                                <img src={bg1} alt=""></img>
+                                <div>中国击剑俱乐部联赛激战横店 领力</div>
+                            </li>
+                            <li>
+                                <img src={bg1} alt=""></img>
+                                <div>中国击剑俱乐部联赛激战横店 领力</div>
+                            </li>
+                            <li>
+                                <img src={bg1} alt=""></img>
+                                <div>中国击剑俱乐部联赛激战横店 领力</div>
+                            </li>
+                            <li>
+                                <img src={bg1} alt=""></img>
+                                <div>中国击剑俱乐部联赛激战横店 领力</div>
+                            </li>
+                        </ul>
+                    </div>
                 </div>  
                 <div className="info">
                     <p>资讯</p>

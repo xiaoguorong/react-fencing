@@ -20,7 +20,7 @@
     height:100%;
     float:left;
 }
-.banner .pic >div{
+.banner .pic a>div{
     margin-top:.36rem;
     width:2.85rem;
     height:3.6rem;
@@ -33,12 +33,12 @@
     cursor: pointer;
     /* background:linear-gradient(180deg,rgba(255,255,255,0) 0%,rgba(72,72,72,0.48) 48%,rgba(3,3,3,1) 100%); */
 }
-.banner .pic>div>img{
+.banner .pic a>div>img{
     width:2.85rem;
     height:3.6rem;
     position: absolute;
 }
-.banner .pic>div .default{
+.banner .pic a>div .default{
     position: absolute;;
     bottom:0;
     width:100%;
@@ -48,7 +48,7 @@
     display:flex;
     border-radius:0 0 .04rem .04rem;
 }
-.banner .pic>div .default p{
+.banner .pic a>div .default p{
     font-size:.14rem;
     font-family:Microsoft YaHei;
     font-weight:400;
@@ -88,7 +88,7 @@
     color:rgba(255,255,255,1);
     opacity:1;
 }
-.banner .pic>div .hover .play{
+.banner .pic a>div .hover .play{
     background:#FF5D38;
     width:.78rem;
 }
@@ -329,7 +329,6 @@
     margin-right:.2rem;
     margin-top:.2rem;
     position: relative;
-    background: url('./../../images/1.png');
     background-size: 100% 100%;
     cursor: pointer;
 }
@@ -662,6 +661,7 @@
     height:2.1rem;
     margin-right:.2rem;
     cursor: pointer;
+    border-radius: .04rem;
     background-size: cover;
 }
 .org_video li:last-of-type{

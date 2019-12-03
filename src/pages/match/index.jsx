@@ -1,7 +1,6 @@
 import React,{ Component } from 'react';
 import {Link} from 'react-router-dom'
 import Navigation from '../../components/navigation'
-import Layout from '../../components/index-layout'
 import arrowLeft from './../../images/arrow-bgblack-left.png'
 import arrowRight from './../../images/arrow-right.png'
 import arrow from './../../images/arrow_more_left.png'

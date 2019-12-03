@@ -1,5 +1,4 @@
 import React,{ Component } from 'react';
-import {Link} from 'react-router-dom'
 import Navigation from '../../components/navigation'
 import bg1 from './../../images/1.png'
 import arrowLeft from './../../images/arrow-bgblack-left.png'
